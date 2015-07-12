@@ -49,9 +49,7 @@ class MinitestPracticeTest < Minitest::Test
   end
 
   def test_hello
-    out, err = capture_io { @my_class.hello }
-    assert_equal 'Hello', out
-
+    assert_includes capture_io { @my_class.hello }, 'Hello'
     assert_output('Hello') { @my_class.hello }
   end
 end
