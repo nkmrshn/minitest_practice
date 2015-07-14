@@ -25,6 +25,7 @@ class MinitestPracticeTest < Minitest::Test
     assert_equal true,  @my_class.check_number?(1000)
     assert_equal false, @my_class.check_number?(1001)
     assert_equal false, @my_class.check_number?(10000)
+    assert_equal false, @my_class.check_number?(0777)
   end
 
   def test_enough_length?
@@ -37,8 +38,8 @@ class MinitestPracticeTest < Minitest::Test
   end
 
   def test_divide
-    assert_equal 2,     @my_class.divide(4, 2)
-    assert_equal 5 / 3, @my_class.divide(5, 3)
+    assert_equal 2,            @my_class.divide(4, 2)
+    assert_equal 5 / 3,        @my_class.divide(5, 3)
     assert_raises(Exception) { @my_class.divide(1, 0) }
   end
 
@@ -50,6 +51,6 @@ class MinitestPracticeTest < Minitest::Test
 
   def test_hello
     assert_includes capture_io { @my_class.hello }, 'Hello'
-    assert_output('Hello') { @my_class.hello }
+    assert_output('Hello')     { @my_class.hello }
   end
 end
