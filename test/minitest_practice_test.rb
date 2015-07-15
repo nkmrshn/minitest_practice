@@ -34,6 +34,10 @@ class MinitestPracticeTest < Minitest::Test
     assert_equal true,  @my_class.enough_length?('a' * 3)
     assert_equal true,  @my_class.enough_length?('a' * 8)
     assert_equal false, @my_class.enough_length?('a' * 9)
+    assert_equal false, @my_class.enough_length?('あ' * 2)
+    assert_equal true,  @my_class.enough_length?('あ' * 3)
+    assert_equal true,  @my_class.enough_length?('あ' * 8)
+    assert_equal false, @my_class.enough_length?('あ' * 9)
   end
 
   def test_divide
