@@ -25,7 +25,6 @@ class MinitestPracticeTest < Minitest::Test
     assert_equal true,  @my_class.check_number?(1000)
     assert_equal false, @my_class.check_number?(1001)
     assert_equal false, @my_class.check_number?(10000)
-    assert_equal false, @my_class.check_number?(0777)
   end
 
   def test_enough_length?
